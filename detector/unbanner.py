@@ -23,7 +23,7 @@ def run_unbanner_scheduler(config):
 
         # 2. Process Unbans
         for ip in to_unban:
-            unban_ip(ip, blocker.banned_ips[ip])
+            unban_ip(ip, blocker.banned_ips[ip], config)
 
 
 def unban_ip(ip, data):

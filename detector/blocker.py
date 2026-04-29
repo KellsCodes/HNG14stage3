@@ -7,7 +7,7 @@ from notifier import send_slack_alert
 banned_ips = {}
 
 
-def ban_ip(ip, rate, baseline, condition):
+def ban_ip(ip, rate, baseline, condition, config):
     """Executes iptables DROP and records the ban."""
     if ip in banned_ips:
         return  # Already banned
@@ -41,7 +41,8 @@ def ban_ip(ip, rate, baseline, condition):
             rate=rate,
             baseline=baseline,
             ip=ip,
-            duration=f"{duration_seconds // 60} mins"
+            duration=f"{duration_seconds // 60} mins",
+            config=config,
         )
 
         # Audit Log (as required by prompt)

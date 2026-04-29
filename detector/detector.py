@@ -54,8 +54,13 @@ def check_traffic(log_data, config):
 
     if z_score > z_limit or \
        current_ip_rate > (mean * config['thresholds']['baseline_multiplier']):
-        ban_ip(ip, current_ip_rate, mean, "IP Anomaly/Error Surge")
+        ban_ip(ip, current_ip_rate, mean, "IP Anomaly/Error Surge", config)
 
     elif len(global_window) / 60.0 > (
             mean * config['thresholds']['baseline_multiplier']):
-        send_slack_alert("Global Traffic Spike", len(global_window)/60.0, mean)
+        send_slack_alert(
+            "Global Traffic Spike",
+            len(global_window)/60.0,
+            mean,
+            config
+        )

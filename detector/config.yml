@@ -1,0 +1,28 @@
+# Nginx Log Path
+log_path: "/var/log/nginx/hng-access.log"
+
+# Detection Thresholds
+thresholds:
+  z_score_limit: 3.0
+  baseline_multiplier: 5.0
+  error_multiplier: 3.0
+
+# Windows (in seconds)
+windows:
+  sliding_window: 60
+  baseline_window: 1800  # 30 minutes
+  recalculation_interval: 60
+
+# Auto-Unban Durations (in seconds)
+unban_schedule:
+  - 600    # 10 minutes
+  - 1800   # 30 minutes
+  - 7200   # 2 hours
+
+# Notifications
+slack:
+  webhook_url: "YOUR_SLACK_WEBHOOK_URL_HERE"
+
+# UI Settings
+dashboard:
+  port: 5000

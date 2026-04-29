@@ -1,4 +1,3 @@
-import time
 import threading
 import yaml
 from monitor import tail_log

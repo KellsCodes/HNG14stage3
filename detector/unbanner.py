@@ -26,11 +26,11 @@ def run_unbanner_scheduler(config):
             unban_ip(ip, blocker.banned_ips[ip], config)
 
 
-def unban_ip(ip, data):
+def unban_ip(ip, data, config):
     """Removes the iptables rule and updates the ban level."""
     try:
         # Remove the rule from the host
-        subprocess.run(["iptables", "-D", "INPUT", "-s",
+        subprocess.run(["iptables", "-D", "DOCKER-USER", "-s",
                        ip, "-j", "DROP"], check=True)
 
         # Log the action
@@ -44,7 +44,7 @@ def unban_ip(ip, data):
         data['level'] += 1
         # If not yet permanent, we keep them in memory but marked as
         # "not active"
-        # In a production environment, we'd clear this, but for the task,
+        # In a production environment, we'd clear this, but for now,
         # we need to track the 'level' for the next time they attack.
         del blocker.banned_ips[ip]
 

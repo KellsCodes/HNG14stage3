@@ -22,7 +22,7 @@ def ban_ip(ip, rate, baseline, condition, config):
     try:
         # Apply iptables rule on the host
         subprocess.run(
-            ["iptables", "-A", "INPUT", "-s", ip, "-j", "DROP"],
+            ["iptables", "-I", "DOCKER-USER", "1", "-s", ip, "-j", "DROP"],
             check=True
         )
 

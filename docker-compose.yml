@@ -22,8 +22,15 @@ services:
     build: ./detector
     restart: always
     network_mode: "host" # Gives the Python daemon access to the host's iptables
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
     volumes:
       - HNG-nginx-logs:/var/log/nginx:ro
+      - /lib/modules:/lib/modules:ro # Crucial for iptables to talk to kernel
     depends_on:
       - nginx
 

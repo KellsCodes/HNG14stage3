@@ -14,7 +14,7 @@ def run_unbanner_scheduler(config):
         to_unban = []
 
         # 1. Identify IPs whose ban duration has expired
-        for ip, data in blocker.banned_ips.items():
+        for ip, data in list(blocker.banned_ips.items()):
             if data['level'] >= len(schedule):
                 continue  # Permanent ban
 
@@ -38,7 +38,8 @@ def unban_ip(ip, data, config):
         blocker.log_audit("UNBAN", ip, "Duration Expired", 0, 0, "0s")
 
         # Notify Slack
-        send_slack_alert(condition="Unbanned", rate=0, baseline=0, ip=ip)
+        send_slack_alert(condition="Unbanned", rate=0,
+                         baseline=0, config=config, ip=ip)
 
         # Prepare for next potential ban (backoff)
         data['level'] += 1

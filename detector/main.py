@@ -8,7 +8,7 @@ from dashboard import start_dashboard
 
 def load_config():
     """Loads the YAML configuration file."""
-    with open('config.yaml', 'r') as f:
+    with open('config.yml', 'r') as f:
         return yaml.safe_load(f)
 
 

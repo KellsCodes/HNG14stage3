@@ -1,10 +1,11 @@
-## HNG Cloud Anomaly Detection Engine
+## 🛡️ HNG Cloud Anomaly Detection Engine
 A real-time DevSecOps daemon that monitors Nginx logs, calculates traffic baselines, and automatically mitigates DDoS/Anomaly attacks using iptables and Slack notifications.
 
- ## Live Deployment Details
- **Server IP**: 20.86.137.57
- **Metrics Dashboard URL**: http://nextcloudmonitor.duckdns.org/
-**GitHub Repository**: https://github.com/KellsCodes/HNG14stage3.git
+## Live Deployment Details
+* **Server IP**: 20.86.137.57
+* **Metrics Dashboard URL**: http://nextcloudmonitor.duckdns.org/
+* **GitHub Repository**: https://github.com/KellsCodes/HNG14stage3.git
+* **Blog post**: https://dev.to/ifeanyi_nworji/building-my-first-smart-firewall-how-i-stopped-ddos-attacks-with-python-1bp8
 
 ## Technical Documentation
 ### Language Choice & Why
@@ -55,9 +56,10 @@ cd HNG14stage3
 ```
 
 **Step 3: Configure Slack Alerts**: 
-Open the configuration file and paste your generated Slack Webhook/Trigger URL:
+Copy .env.example and modify it by pasting your generated Slack Webhook/Trigger URL:
 ```bash
-nano detector/config.yaml
+cp .env.example .env
+nano .env
 ```
 
 Update the URL:

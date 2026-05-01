@@ -1,3 +1,4 @@
+import os
 import requests
 
 
@@ -11,7 +12,8 @@ def send_slack_alert(
 ):
     """Sends a structured alert using the webhook URL from the config."""
     # Read the URL directly from the config dictionary
-    webhook_url = config.get('slack', {}).get('webhook_url')
+    # webhook_url = config.get('slack', {}).get('webhook_url')
+    webhook_url = os.getenv('SLACK_WEBHOOK_URL')  # Override with env var if set
 
     if not webhook_url:
         print(

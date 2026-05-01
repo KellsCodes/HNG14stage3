@@ -10,6 +10,7 @@ services:
 
   nginx:
     image: nginx:latest
+    restart: always
     ports:
       - "80:80"
     volumes:
@@ -28,6 +29,8 @@ services:
     cap_add:
       - NET_ADMIN
       - NET_RAW
+    environment:
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
     volumes:
       - HNG-nginx-logs:/var/log/nginx:ro
       - /lib/modules:/lib/modules:ro # Crucial for iptables to talk to kernel

@@ -19,10 +19,6 @@ unban_schedule:
   - 1800   # 30 minutes
   - 7200   # 2 hours
 
-# Notifications
-slack:
-  webhook_url: "https://hooks.slack.com/triggers/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"
-
 # UI Settings
 dashboard:
   port: 5000

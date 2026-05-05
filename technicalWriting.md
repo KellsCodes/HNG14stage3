@@ -1,0 +1,7 @@
+Good morning my people,
+I understand that writing a technical article/blog can be somewhat challenging especially if you're not a writer or have never written a blog before. That said, for those that were asked to rewrite/revise their blogs by the mentors, please take note of the following. Please review these resources to understand how a technical blog should be written:
+
+- **"How to Start Technical Writing & Blogging"** by Egor Howell — there's a video version on his YouTube channel linked from his Towards Data Science article. Covers picking a niche, choosing a platform (Medium/Hashnode), and three post types: career advice, technical breakdowns, and documenting learning.
+- **freeCodeCamp YouTube channel or YouTube in general** — search "technical writing" or "how to write a blog post" there. FCC also has a great written companion: [Technical Blogging Basics](https://www.freecodecamp.org/news/technical-blogging-basics/) which covers tools, publishing platforms, and promoting posts.
+- [The Ultimate Guide to Writing Technical Blog Posts](https://blackgirlbytes.dev/the-ultimate-guide-to-writing-technical-blog-posts) — by Rizèl Scarlett ( former GitHub staff DevRel).
+- [Technical Blogging Basics – How to Write Articles as a Developer](https://www.freecodecamp.org/news/technical-blogging-basics/)
